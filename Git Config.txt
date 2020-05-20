@@ -37,3 +37,4 @@ git branch nomBranche				 	--> Permet de créer une nouvelle branche nomBranche
 git checkout nomBranche					--> Permet de se positionner sur la branche nomBranche
 git checkout -b ma-branche				--> Permet de créer et de positionner sur une nouvelle branche nomBranche
 git merge nomBranche					--> Permet de merger deux branches (On se place sur la branche qu'on veut écraser et on applique le merge de l'autre branche)
+git commit								--> Après un conflit utiliser cette commande pour reprendre le message d'erreur par défaud de git
