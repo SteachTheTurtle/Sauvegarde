@@ -35,3 +35,5 @@ git pull origin (ou autre PC) master 	--> Permet de récupérer les modification
 git branch							 	--> Permet d'obtenir le nom de la branche du repository actuel
 git branch nomBranche				 	--> Permet de créer une nouvelle branche nomBranche
 git checkout nomBranche					--> Permet de se positionner sur la branche nomBranche
+git checkout -b ma-branche				--> Permet de créer et de positionner sur une nouvelle branche nomBranche
+git merge nomBranche					--> Permet de merger deux branches (On se place sur la branche qu'on veut écraser et on applique le merge de l'autre branche)
