@@ -1,0 +1,247 @@
+Raccourci / Penses Bêtes:
+-------------------------
+
+Shift + PgUp	--> Parcourir vers le haut
+Shift + PgDown	--> Parcourir vers le bas
+CTRL + C 	--> Tuer une commande active en cours dans la console
+/dev/null	--> Repository néant de linux
+
+.deb		--> Fichier compilé pour Debian qui n'est pas forcément sur apt-get
+.rpm		--> Fichier compilé pour Red Hat qui n'est pas forcément sur apt-get
+
+Télécharger et dézipper le tar avec une commande "tar zxvf Fichier.tar.gz". Vérifier les dépendances de l'outil "./configure". S'il en manque, installer les programmes avec apt-get. Puis, lancer un "make" pour compiler le programme. Et copier le fichier compilé dans le fichier système avec la commande "sudo make install" dans l'arborescence du fichier compilé. Pour désinstaller, utiliser la commande "sudo make uninstall" dans l'arborescence du fichier compilé.
+
+Redirection de flux:
+--------------------
+
+;		--> Lancer une commande après une autre
+&&		--> Lancer une commande après une autre si celle précédente et valide
+|		--> Enchainer une commande après une autre
+>		--> Rediriger les sorties standard vers un fichier (Crée ou Ecrase l'ancienne version)
+>>		--> Rediriger les sorties standard vers la fin d'un fichier (Crée ou ajoute l'information à l'ancienne version)
+2>		--> Rediriger les sorties erreurs vers un fichier (Crée ou Ecrase l'ancienne version)
+2>>		--> Rediriger les sorties erreurs vers la fin d'un fichier (Crée ou ajoute l'information à l'ancienne version)
+2>&1		--> Rediriger les sorties erreurs vers le même fichier que les sorties standards (S'adapte aux choix standards)
+< + fichier	--> Le shell envoie le contenu du fichier à la commande (On n'ouvre pas le fichier pour accèder au contenu)
+<< + ETIQUETTE	--> Permettre de saisir au clavier des entrées avant de réaliser une commande. Tapper ETIQUETTE pour finaliser la saisie
+
+Commande en arrière plan:
+-------------------------
+
+&		--> Lancer la commande en arrière plan (en fin de commande)
+nohup 		--> Détacher le processus de la console et lancer la commande en arrière plan (en début de commande) Résultat dans "nohup.out"
+CTRL + Z après avoir lancer une commande --> Mettre en pause la commande
+bg		--> Mettre le processus stoppé en arrière plan (après CTRL + Z uniquement)
+fg (%2)	--> Reprendre un processus au premier plan (foreground) (après CTRL + Z, jobs)
+jobs 		--> Connaître les processus qui tournent en arrière-plan
+
+Commande bash:
+--------------
+
+env		--> Obtenir les variables d'environnement du PC
+echo + MESSAGE	--> Afficher le message		
+date		--> Afficher Date
+sleep		--> Attendre (Par défaud en seconde)
+pwd		--> Donner le répertoire actuel
+which + cmde	--> Connaître l'emplacement d'une commande
+du		--> Donner la taille des fichiers du répertoire actuel
+exit		--> Fermer la commande
+sudo + cmde 	--> Passer une commande en tant qu'administrateur
+sudo su	--> Passser en mode administrateur (exit pour sortir du mode administrateur)	
+ls		--> Lister les fichiers / dossiers dans un répertoire
+man		--> Aide complete aux commandes
+whatis		--> Aide simplifiée aux commandes
+cd		--> Déplacer dans les répertoires
+dir		--> Afficher les dossier d'un fichier	
+grep ou egrep 	--> Filtrer des données par ligne d'un fichier
+wc		--> Compter le nombre de lignes, mots et octets
+history	--> Afficher l'historique des commandes ou CTRL+R 
+clear		--> Nettoyer la console ou CTRL+L
+sudo halt	--> Arrêter l'ordinateur
+sudo reboot	--> Redémarrer l'ordinateur
+sudo shutdown	--> Arrêter l'ordinateur
+host		--> Convertir une IP en nom d'hôte et inversement
+whois + site	--> Obtenir des informations d'une adresse internet
+
+ifconfig		--> Obtenir des informations sur l'adresse IP
+ifconfig eth0 down	--> Fermer le traffic de "eth0"
+ifconfig eth0 up	--> Ouvrir le traffic de "eth0"
+netstat -i 		--> Obtenir des statistiques des interfaces réseau
+netstat -uta 		--> Lister toutes les connexions ouvertes
+	-u : Afficher les connexions UDP ;
+	-t : Afficher les connexions TCP ;
+	-a : Afficher toutes les connexions quel que soit leur état ;
+	-n : Afficher les numéros.
+	-lt : Lister des connexions en état d'écoute ;
+	-s : Obtenir des statistiques résumées.
+
+iptables -L --line-numbers		--> Afficher les règles du pare-feu (Avec affichage des lignes)
+iptables -F				--> Ré-initialiser les règles du pare-feu (Attention, il faudra tout régler!!)
+iptables -A (chain) -p (protocole) --dport (port) -j (décision)	--> Configurer une règle
+
+iptables -P INPUT DROP							--> Refuser toutes les autres connexions par défaut
+iptables -A INPUT -p icmp -j ACCEPT					--> Autoriser les pings
+iptables -A INPUT -i lo -j ACCEPT					--> Autoriser les connexions locales
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT	--> Autoriser les connexions déjà ouvertes
+
+cat		--> Lecture de tout le fichier
+less		--> Lecture progessive d'un fichier (ESPACE pour lire de page en page, ENTREE pour faire défiler par ligne, q pour sortir)
+more 		--> Lecture progessive d'un fichier : Moin intérressant que less
+head		--> Afficher la première partie d'un fichier
+tail		--> Afficher la dernière partie d'un fichier
+
+touch		--> Créer un fichier
+mkdir		--> Créer un dossier
+cp		--> Copier un fichier
+mv		--> Déplacer un fichier
+rm		--> Supprimer fichier / arboressence (Attention très dangeureux ==> Utiliser l'option -i pour confirmation)
+ln 		--> Créer des liens symboliques ou physiques
+
+adduser 	--> Ajouter un utilisateur
+deluser 	--> Supprimer un compte
+addgroup 	--> Gérer des groupes
+usermod 	--> Modifier un utilisateur
+delgroup 	--> Supprimer un groupe
+passwd 	--> Changer le mot de passe
+chown 		--> Gérer la propriété des fichiers
+chgrp 		--> Changer le groupe propriétaire d'un fichier
+chmod 		--> Modifier les droits d'accès
+
+apropos	--> Trouver une commande
+locate		--> Rechercher par nom de fichier (simplifée)
+sudo updatedb	--> Mettre à jour la database des fichiers (Si le fichier rechercher a été créer le même jour)
+find		--> Rechercher par nom de fichier (approfondie)
+sort		--> Trier les fichiers
+uniq		--> Supprimer les doublons
+cut		--> Couper une partie d'un fichier
+
+w			--> Surveiller l'activité système
+uptime			--> Connaitre la durée de connexion du PC; la charge à l'instant de la commande
+tload			--> Connaitre la charge sur un espace temps (CTRL + C pour quitter)
+ps -ef			--> Lister les processus statiquement
+ps -ejH 		--> Afficher les processus en arbre statiquement
+ps -u UTILISATEUR 	--> Afficher les processus et filtrer par le nom de l'utilisateur
+top			--> Lister les processus en temps réel (h pour afficher l'aide, q pour quitter)
+kill + PID		--> Tuer le processus (gentillement) par le PID (Récupérer par les commmandes ps ou top)
+kill -9 + PID		--> Tuer le processus (forcé) par le PID (Récupérer par les commandes ps ou top)
+killall NOM_PROCESSUS	--> Tuer un ensemble de processus ayant comme nom NOM_PROCESSUS
+ 
+
+Commande application:
+---------------------
+
+nano				--> Ouverture de l'éditeur de texte "Nano"
+vim				--> Ouverture de l'éditeur de texte "Vim"
+
+apt-get update			--> Mettre à jour le cache des mises à jour
+apt-cache search + monpaquet	--> Chercher un paquet précis sur le serveur linux
+apt-get install + monpaquet 	--> Télécharger et installer paquet sur le serveur linux
+apt-get update 		--> Mettre à jour le cache des paquets
+apt-get remove + monpaquet 	--> Supprimer un paquet
+apt-get autoremove 		--> Supprimer un paquet et dépendances inutiles
+apt-get upgrade 		--> Mettre à jour tous les paquets (Faire un apt-get update avant pour mettre à jour l'ordinateur)
+
+tar -cvf + Nom_Fichier.tar + Nom_dossier	--> Créer un fichier tar
+tar -tf Nom_Fichier.tar			--> Lecture du fichier tar sans compresser
+tar -rvf + Nom_Fichier.tar + Nom_dossier	--> Ajouter un fichier dans un fichier tar
+tar -xvf 					--> Extraire les fichiers de l'archive
+compress					--> Compresser un fichier (Moins compresssé mais moins long)
+gzip + Nom_Fichier.tar				--> Compresser un fichier --> Le plus utilisé
+bzip2 + Nom_Fichier.tar			--> Compresser un fichier (Plus compresssé mais plus long)
+gunzip + Nom_Fichier.tar			--> Décompresser un fichier --> Le plus utilisé
+bunzip2 + Nom_Fichier.tar			--> Décompresser un fichier (Plus compresssé mais plus long)
+tar -zcvf Nom_Fichier.tar.gz Nom_Fichier/	--> Archiver et Compresser en tar puis gzip
+tar -zxvf Nom_Fichier.tar.gz			--> Décompresser un fichier gzip
+tar -ztf Nom_Fichier.tar.gz			--> Lecture d'un fichier gzip
+tar -jcvf Nom_Fichier.tar.bz2 Nom_Fichier/	--> Archiver et Compresser en tar puis bzip
+tar -jxvf Nom_Fichier.tar.bz2			--> Décompresser un fichier bzip2
+tar -jtf Nom_Fichier.tar.gz			--> Lecture d'un fichier bzip2
+zcat						--> Equivalent d'un cat pour lecture d'un fichier zip (fichier unique)
+zless						--> Equivalent d'un less pour lecture d'un fichier zip (fichier unique)
+zmore						--> Equivalent d'un more pour lecture d'un fichier zip (fichier unique)
+
+wget + site_internet			--> Télécharger le fichier par le lien internet (CTRL + C pour stopper le téléchargement)
+wget -c + site_internet		--> Reprendre le téléchargement du fichier par le lien internet
+wget --background + site_internet	--> Télécharger en arrière plan le fichier par le lien internet
+scp					--> Copie de fichier sécurisé
+	Exemple : scp -P 10010 image.png yannick@89.89.54.74:/home/yannick/images/
+rcp					--> Copie de fichier non sécurisé (déconseillé)
+ftp + site_ftp				--> Se connecter à un FTP : Attention non sécurisé ("bye", "exit" ou "quit" pour quitter)
+put					--> Poser un fichier
+get					--> Obtenir un fichier
+sftp -oPort=10010 login@ip 		--> Se connecter à un SFTP ("bye", "exit" ou "quit" pour quitter)
+
+	Pour information : Lorqu'on est connecté au FTP, !cmd permet de lancer les commandes sur notre PC.
+
+rsync -arv --delete --backup-dir	--> Synchroniser un dossier / fichier et ces sous dossier (Supprime les fichiers et back-up des fichiers si nécessaire) avec un autre (de manière incrémental)
+rsync -arv --delete --backup-dir=~/fichiers_supprimes Images/ yannick@89.89.54.74:mes_backups/ -e "ssh -p 10010" --> Synchronisation d'un fichier avec connexion au PC en SSH
+
+
+Console émulée:
+---------------
+
+screen				--> Créer une console émulée (Installation nécessaire; "exit" pour quitter)
+CTRL + A puis touche ? 	--> Atteindre l'aide dans l'espace
+CTRL + A puis COMBINAISON	--> Commande dans la console émulée
+CTRL + A puis S		--> (split) Découper la console (CTRL + A puis p, CTRL + A puis n, CTRL + A puis Tab pour naviguer)
+Ctrl + A puis c		--> Créer une nouvelle console émulée dans l'espace "screen"
+CTRL + A puis D		--> (detach) Sortir de la console sans la fermer
+screen -r (PID)		--> Permettre de revenir dans la console émulée (PID est utile s'il y a plusieurs consoles émulés)
+screen -ls			--> Lister toutes les consoles émulées
+
+Retarder commande:
+------------------
+
+at		--> Donner l'heure différée, Donner la suite de commande, et, Terminer les commandes par <EOF> ou CTRL+D
+
+		    A noter : 	L'heure peut être donner par les options suivantes : now +5 minutes; 14:17 tomorrow; 14:17 11/15/10
+		    	     	La date est au format américain, les numéros du jour et du mois sont donc inversés : 11/15/10. 11 correspond au mois (novembre) et 15 au numéro du jour !
+
+atq		--> Lister les jobs en attente
+atrm 		--> Supprimer les jobs en attente
+
+crontab -e	--> Modifier la crontab 
+crontab -l	--> Afficher la crontab actuelle
+crontab -r	--> Supprimer votre crontab. Attention, la suppression est immédiate et sans confirmation !
+
+Créer un serveur SSH:
+---------------------
+
+sudo apt-get install openssh-server	--> Installation de l'outil
+sudo /etc/init.d/ssh start		--> Démarrer le serveur
+sudo /etc/init.d/ssh stop		--> Arrêter le serveur
+
+/etc/ssh/ssh_config			--> Fichier de configuration du serveur ssh
+					    Il faut faire un "reload" pour prendre en compte le changement.
+
+sudo /etc/init.d/ssh reload		--> Recharger le fichier de configuration
+
+ssh login@ip -p NB_PORT		--> Connexion au serveur ssh par le numéro de port NB_PORT. Le port 22 est assigné au SSH généralement
+ssh login@localhost			--> Connexion au localhost du PC (pour des tests)
+ssh login@127.0.0.1			--> Connexion au localhost du PC (pour des tests)
+
+ssh-keygen -t rsa			--> Générer une clé public et privé pour la communication SSH
+
+ssh-copy-id -i id_rsa.pub -p NB_PORT login@IP_SERVEUR 	--> Ajouter une personne autorisée sur le serveur avec le RSA (public et privée)
+ssh-copy-id -i id_rsa.pub -p 10010 yannick@89.89.54.74
+ssh-copy-id -i id_rsa.pub -p 22 yannick@192.168.1.60
+
+ssh-add				--> Activer l'agent SSH en arrière plan
+
+cd  /.ssh					--> Accéder au répertoire .ssh
+mkdir .ssh					--> Création du répertoire si besoin
+echo "votre_cle_public" >> authorized_keys	--> Ajouter la clé public du client pour authoriser la connexion en ssh sans MdP
+
+
+Créer un programme bash:
+------------------------
+
+#!/bin/bash			==> Indique la version du bash utilisée
+
+chmod +x script.sh		==> Après la création du script, il faut modifier celui-ci pour lé déclarer éxécutable
+./ + NomDuProgramme 		==> Lancement du script (Pour lancer le programme uniquement par son nom,
+				    il faut intégrer le fichier dans l'arborescence tel que /bin, /usr/bin ou /usr/local/bin )
+bash -x + NomDuProgramme 	==> Lancement du script en debug
+
+
+
