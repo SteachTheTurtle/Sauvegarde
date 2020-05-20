@@ -38,3 +38,10 @@ git checkout nomBranche					--> Permet de se positionner sur la branche nomBranc
 git checkout -b ma-branche				--> Permet de créer et de positionner sur une nouvelle branche nomBranche
 git merge nomBranche					--> Permet de merger deux branches (On se place sur la branche qu'on veut écraser et on applique le merge de l'autre branche)
 git commit								--> Après un conflit utiliser cette commande pour reprendre le message d'erreur par défaud de git
+git blame nomdufichier.extension		--> Retrouver l'auteur d'une modification (On obtient le commit par son début du SHA unique)
+git show débutSHA_Commit				--> Permet l'affichage des modifications du commit
+git stash								--> Permet de mettre en pause les modifications actuelles et réaliser une nouvelle version à partir du dernier commit
+git stash pop							--> Permet de revenir sur les modifications mis en pause.
+git stash apply							--> Permet de garder les modiffications dnas votre stash
+
+Utiliser le fichier .gitignore pour lister les fichiers que vous ne voulez pas retrouver sur github (Sécurtité, log, mots de passe) --> Ce fichier doit être tracker via des commits pour suivre les évolutions de celui-ci en cours de projet					
