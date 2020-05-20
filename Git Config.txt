@@ -1,0 +1,37 @@
+Configuration Git au premier démarage :
+----------------------------------------
+
+git config --global user.name "SteachTheTurtle"
+git config --global user.email "steack.hache@gmail.com"
+
+Commande Git dans la console :
+------------------------------
+
+pwd : 					La commande pwd vous permet de connaître votre répertoire courant
+ls (-l -a ou -la) : 	La commande ls vous permet de voir la liste des fichiers et répertoires dans le dossier courant
+cd (..):				La commande cd vous permet de vous placer dans un répertoire.
+touch : 				La commande touch vous permet de créer un fichier.
+mkdir :					La commande mkdir vous permet de créer un dossier.
+cat : 					La commande cat vous permet d'afficher le contenu d’un fichier. 
+
+Commande pour arriver directement dans l'arborescence de test.
+--------------------------------------------------------------
+
+cd Desktop/Travail/'Exercice OC'/GIT
+git init 						--> Permet d'initialiser une arborescence git
+git status						--> Permet d'avoir un statut du repository git
+git add Nom_de_fichier			--> Ajoute un fichier à la gestion de version
+git commit -m "Commentaire"		--> Réalise un commit
+git commit -a -m "Commentaire"	--> Réalise un commit sur tout les fichiers modifiés dans l'arborescence
+git log							--> Permet de lire l'ensemble des commit du projet (qur quitter le log) --> On extrait le SHA
+git checkout SHADuCommit		--> Permet de se repositionner sur le commit correspondant au SHA
+git checkout master				--> On revient sur le dernier commit
+git revert SHADuCommit			--> Suppresion du commit qui fait l'inverse du précédent
+git commit --amend -m "Votre nouveau message" --> Modification du message de mon dernier commit
+git reset --hard‌					--> Annulation de tous les changements que je n'ai pas encore commités (Attention suppresion des éléments non sauvegardés)
+git clone LienInternet				--> Telecharge le contenu lier au repository de l'adresse GitHub (par exemple) transmise
+git push origin (+ autre PC) master	--> Permet de mettre les modifications de la branche master sur le remote (nommé origin dans la ligne de commande)
+git pull origin (ou autre PC) master 	--> Permet de récupérer les modifications de la branche master du remote (nommé origin dans la ligne de commande)
+git branch							 	--> Permet d'obtenir le nom de la branche du repository actuel
+git branch nomBranche				 	--> Permet de créer une nouvelle branche nomBranche
+git checkout nomBranche					--> Permet de se positionner sur la branche nomBranche
