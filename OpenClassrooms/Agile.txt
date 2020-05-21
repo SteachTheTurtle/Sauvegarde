@@ -1,0 +1,19 @@
+- Méthode utilisée par l'équipe : Méthode Scrum
+
+- Pratique Agiles :
+
+==> L'utilisation du Backlog : Liste des fonctionnalités et user stories
+==> Un dailymeeting est prévu chaque matin, conduit par un scrum master
+==> Mise en place d'un poker planning
+==> Présence d'un Product Owner
+==> Pair Programming
+==> Outil de gestion de version collaboratif : Git, GitLab (Alternative à Github) qui permet le développement itératif et incrémental
+==> Intégration Continu qui permet de développer en mode collaboratif 
+==> Utilisation de Trello qui permet de développer en mode collaboratif pendant les daily meeting
+
+Les éléments qui ne semblent pas faire partie des bonnes pratiques sont : 
+
+==> Présence d'un chef de projet qui n'est pas compatible de la méthodologie
+==> Réunion hebdomadaire d'une heure de l'équipe avec le chef de projet superflue vis à vis de la méthodologie agile --> Cela ne sert pas à la méthodologie
+==> L'équipe ne doit pas êre perturbé par les chefs de projets externe au projet
+==> L'étape d'intégration en PréProduction semble manquer dans le processus de développement

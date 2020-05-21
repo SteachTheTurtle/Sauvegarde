@@ -1,0 +1,15 @@
+Version 4
+SymbolType CELL
+RECTANGLE Normal 160 64 -143 -31
+TEXT 0 15 Center 2 PI
+WINDOW 0 0 96 Bottom 2
+SYMATTR SpiceLine KP=1 KI=0
+SYMATTR Description Correcteur PI
+SYMATTR Prefix X
+SYMATTR Value PI
+PIN -144 16 LEFT 8
+PINATTR PinName INPUT
+PINATTR SpiceOrder 1
+PIN 160 16 RIGHT 8
+PINATTR PinName OUTPUT
+PINATTR SpiceOrder 2

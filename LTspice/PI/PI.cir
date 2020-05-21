@@ -1,0 +1,11 @@
+* C:\Users\morel\Documents\LTspiceXVII\lib\sym\Yannick\PI.asc
+.subckt PI INPUT RESET OUTPUT params: KP=1 KI=0 SAT_MIN=0 SAT_MAX=20
+B1 KP_NET 0 V={KP}*V(INPUT)
+B2 KI_NET 0 V={KI}*V(KP_NET)
+B3 SAT_IN 0 V=V(KP_NET)+V(INTEG)
+B4 INTEG 0 V=idt(if(V(STOP)==0,V(KI_NET),0),0,V(RESET))
+R1 INPUT 0 1G
+R2 RESET 0 1G
+B5 OUTPUT 0 V=limit(SAT_MIN,V(SAT_IN),SAT_MAX)
+B6 STOP 0 V=if((V(INPUT)*V(SAT_IN)>0)&(V(SAT_IN)<>V(OUTPUT)),1,0)
+.end
