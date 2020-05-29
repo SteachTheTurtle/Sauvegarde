@@ -1,4 +1,4 @@
-package com.steachtheturtle.test3;
+package com.steachtheturtle.interface_non_abstraite;
 
 public interface Pondre extends Reproduction {
 
@@ -7,9 +7,8 @@ public interface Pondre extends Reproduction {
 		System.out.println("Redéfinie dans Pondre.java");
 	}
 
-	
 	default void reproduire() {
 		System.out.println("Je ponds des oeufs !");
 	}
-	
+
 }

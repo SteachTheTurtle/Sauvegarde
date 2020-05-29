@@ -1,7 +1,8 @@
 package com.steachtheturtle.strategy;
 
-public class CombatCouteau implements EspritCombatif {	
-  public void combat() {
-    System.out.println("Je me bats au couteau !");
-  }
+public class CombatCouteau implements EspritCombatif {
+	@Override
+	public void combat() {
+		System.out.println("Je me bats au couteau !");
+	}
 }
