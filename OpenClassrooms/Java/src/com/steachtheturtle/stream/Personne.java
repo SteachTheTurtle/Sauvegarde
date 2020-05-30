@@ -1,0 +1,68 @@
+package com.steachtheturtle.stream;
+
+public class Personne {
+
+	public Double taille = 0.0d, poids = 0.0d;
+	public String nom = "", prenom = "";
+	public Couleur yeux = Couleur.INCONNU;
+
+	public Personne() {
+	}
+
+	public Personne(double taille, double poids, String nom, String prenom, Couleur yeux) {
+		super();
+		this.taille = taille;
+		this.poids = poids;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.yeux = yeux;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public Double getPoids() {
+		return poids;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public Double getTaille() {
+		return taille;
+	}
+
+	public Couleur getYeux() {
+		return yeux;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public void setPoids(Double poids) {
+		this.poids = poids;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public void setTaille(Double taille) {
+		this.taille = taille;
+	}
+
+	public void setYeux(Couleur yeux) {
+		this.yeux = yeux;
+	}
+
+	@Override
+	public String toString() {
+		String s = "Je m'appelle " + nom + " " + prenom;
+		s += ", je pèse " + poids + " Kg";
+		s += ", et je mesure " + taille + " cm.";
+		return s;
+	}
+}
