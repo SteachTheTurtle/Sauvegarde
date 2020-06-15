@@ -1,4 +1,4 @@
-package com.steachtheturtle.ihm;
+package com.steachtheturtle.ihm.graphic;
 
 public class IHM {
 

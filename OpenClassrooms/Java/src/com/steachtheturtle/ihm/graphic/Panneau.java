@@ -1,4 +1,4 @@
-package com.steachtheturtle.ihm;
+package com.steachtheturtle.ihm.graphic;
 
 import java.awt.Color;
 import java.awt.Graphics;
